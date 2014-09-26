@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharperTnT", "ReSharperTnT\ReSharperTnT.csproj", "{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharperTnT.Tests", "ReSharperTnT.Tests\ReSharperTnT.Tests.csproj", "{581C012D-5FC9-4186-848D-6FC438DB95AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{581C012D-5FC9-4186-848D-6FC438DB95AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{581C012D-5FC9-4186-848D-6FC438DB95AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{581C012D-5FC9-4186-848D-6FC438DB95AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{581C012D-5FC9-4186-848D-6FC438DB95AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
