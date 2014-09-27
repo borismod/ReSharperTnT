@@ -1,9 +1,6 @@
-﻿using System.Reflection;
-using System.Web;
+﻿using System.Web;
 using System.Web.Http;
-using Autofac;
 using Autofac.Integration.WebApi;
-using ReSharperTnT.Controllers;
 
 namespace ReSharperTnT
 {
@@ -13,20 +10,10 @@ namespace ReSharperTnT
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            // Create the container builder.
-            var builder = new ContainerBuilder();
+            var container = new Bootstrapper().CreateContainer();
 
-            // Register the Web API controllers.
-            builder.RegisterType<TipsAndTricksController>().InstancePerLifetimeScope();
-            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly());
-
-            // Build the container.
-            var container = builder.Build();
-
-            // Create the depenedency resolver.
             var resolver = new AutofacWebApiDependencyResolver(container);
 
-            // Configure Web API with the dependency resolver.
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
         }
     }

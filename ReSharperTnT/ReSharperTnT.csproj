@@ -91,11 +91,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ResharperTip.cs" />
-    <Compile Include="TipsAndTricksRepository.cs" />
+    <Compile Include="Engine\ResharperTipHtmlNodeValidator.cs" />
+    <Compile Include="Engine\ReSharperTipsHtmlParser.cs" />
+    <Compile Include="Engine\TipsAndTricksRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\TipsAndTricksController.cs" />
   </ItemGroup>

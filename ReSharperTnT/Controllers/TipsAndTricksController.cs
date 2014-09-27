@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using ReSharperTnT.Engine;
 using ReSharperTnT.Models;
 
 namespace ReSharperTnT.Controllers
@@ -7,9 +8,9 @@ namespace ReSharperTnT.Controllers
     {
         private readonly ITipsAndTricksRepository _tipsAndTricksRepository;
 
-        public TipsAndTricksController()
+        public TipsAndTricksController(ITipsAndTricksRepository tipsAndTricksRepository)
         {
-            _tipsAndTricksRepository = new TipsAndTricksRepository();
+            _tipsAndTricksRepository = tipsAndTricksRepository;
         }
 
         // GET api/<controller>
