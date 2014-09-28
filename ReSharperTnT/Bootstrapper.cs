@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Reflection;
+using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 
@@ -6,11 +7,6 @@ namespace ReSharperTnT
 {
     public class Bootstrapper
     {
-        static Bootstrapper()
-        {
-            Init();
-        }
-
         public static void Init()
         {
             var bootstrapper = new Bootstrapper();
@@ -25,12 +21,10 @@ namespace ReSharperTnT
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterAssemblyTypes(typeof (Bootstrapper).Assembly)
-                .AsImplementedInterfaces();
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterAssemblyTypes(typeof (Bootstrapper).Assembly)
-                .Where(c=>c.Name.EndsWith("Controller"))
-                .AsSelf();
+                .AsImplementedInterfaces();
 
             _container = builder.Build();
         }
