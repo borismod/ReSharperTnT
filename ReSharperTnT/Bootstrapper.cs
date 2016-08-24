@@ -7,19 +7,11 @@ namespace ReSharperTnT
 {
     public class Bootstrapper
     {
-        public static void Init()
-        {
-            var bootstrapper = new Bootstrapper();
-            var container = bootstrapper.CreateContainer();
-            var autofacWebApiDependencyResolver = new AutofacWebApiDependencyResolver(container);
-            GlobalConfiguration.Configuration.DependencyResolver = autofacWebApiDependencyResolver;
-        }
-
         private readonly IContainer _container;
 
         public Bootstrapper()
         {
-            var builder = new ContainerBuilder();
+            ContainerBuilder builder = new ContainerBuilder();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
@@ -29,7 +21,7 @@ namespace ReSharperTnT
             _container = builder.Build();
         }
 
-        public IContainer CreateContainer()
+        public IContainer GetContainer()
         {
             return _container;
         }

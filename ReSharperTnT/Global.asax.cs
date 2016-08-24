@@ -1,5 +1,7 @@
 ﻿using System.Web;
 using System.Web.Http;
+using Autofac;
+using Autofac.Integration.WebApi;
 
 namespace ReSharperTnT
 {
@@ -9,7 +11,10 @@ namespace ReSharperTnT
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            Bootstrapper.Init();
+            IContainer container = new Bootstrapper().GetContainer();
+
+            GlobalConfiguration.Configuration.DependencyResolver = 
+                new AutofacWebApiDependencyResolver(container);
         }
     }
 }
